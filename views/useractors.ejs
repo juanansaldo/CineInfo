@@ -1,0 +1,55 @@
+<%- include("partials/header.ejs") %>
+  
+<body>
+
+  <header> 
+    <h1 class="com-title"> Actors </h1>
+    
+    <nav class="mod">
+      <a class="com-nav" href="/userPage"> Home </a>
+      <a class="com-nav" href="/useractors"> All Actors </a>
+      <a class="com-nav" href="/usermovies"> All Movies </a>
+      <a class="com-nav" href="/searchuser"> Search </a>
+      <a class="com-nav" href="/logout"> Logout </a>
+    </nav>
+  </header>
+  
+  <div id = "movies" >
+    <% for (i = 0; i < actors.length; i++) { %>
+        <div class="com-item"> 
+          <br>
+          <img src="<%= actors[i].portrait %>" height="160px" width="160px"> <br>
+          <a class="com-text card-text" href="#" id = "<%= actors[i].actorId %>"> <%= actors[i].name %> </a>
+          <br>
+        </div>
+    <% } %>
+  </div>
+
+  <!-- Actor Modal -->
+  <div class="modal fade" id="actorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"> Actor Info </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+  
+          <div class="mod" id = "actorName"> </div>
+          <div class="mod" id = "actorAge"> </div>
+          <div class="mod" id = "actorPicture"> </div>
+          <div id="actorAbout"> </div>
+          
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>      
+      <script src="/js/script.js"></script>
+    
+<%- include("partials/footer.ejs") %>
+</body>
+</html>

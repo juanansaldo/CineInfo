@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %>
+  
+<body>
+  <header>
+    <h1 class="com-title"> Add an Actor </h1>
+    <nav class="mod">
+      <a class="com-nav" href="/home"> Home </a>
+      <a class="com-nav" href="/addMovie"> Add a movie </a>
+      <a class="com-nav" href="/addActor"> Add an actor </a>
+      <a class="com-nav" href="/movies"> All Movies </a>
+      <a class="com-nav" href="/actors"> All Actors </a>
+      <a class="com-nav" href="/search"> Search </a>
+      <a class="com-nav" href="/logout"> Logout </a>
+    </nav>
+    <br>
+  </header>
+
+  <form action="/addActor" method="POST" class="mod">
+    <span class="user-form-label"> Name: </span>
+    <input type=text name="name" class="width162"> <br>
+
+    <span class="user-form-label"> Age: </span>
+    <input type=text name="age" class="width162"> <br>
+
+    <span class="user-form-label"> About: </span>
+    <textarea name="about" class="width162"> </textarea> <br>
+
+    <span class="user-form-label"> Picture: </span>
+    <input type=text name="picture" class="width162"> <br>
+
+    <button class="width130 ml16"> Add Actor </button>
+    
+  </form>
+  <%- include("partials/footer.ejs") %>
+</body>
+</html>

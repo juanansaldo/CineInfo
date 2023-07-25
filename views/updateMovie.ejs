@@ -1,0 +1,45 @@
+<%- include("partials/header.ejs") %>
+
+  <header>
+    <h1 class="com-title"> Update Movie Info </h1>
+    
+    <nav class="mod">
+      <a class="com-btn" href="/home"> Home </a>
+      <a class="com-btn" href="/addMovie"> Add a movie </a>
+      <a class="com-btn" href="/addActor"> Add an actor </a>
+      <a class="com-btn" href="/movies"> All Movies </a>
+      <a class="com-btn" href="/actors"> All Actors </a>
+      <a class="com-btn" href="/search"> Search </a>
+      <a class="com-btn" href="/logout"> Logout </a>
+    </nav>
+    <br>
+  </header>
+
+  <form action = "/updateMovie" method = "POST" class="mod">
+
+    <input type="hidden" name="movieId" value="<%= movieInfo[0].movieId %>">
+    
+    <span class="user-form-label"> Movie Name: </span>
+    <input type = "text" name = "title" class="width162" value = "<%= movieInfo[0].title %>">  <br>
+
+     <span class="user-form-label"> Genre: </span>
+    <input type = "text" name = "genre" class="width162" value = "<%= movieInfo[0].genre %>" > <br>
+
+    <span class="user-form-label"> Release Year: </span>
+    <input type = "text" name = "year" class="width162" value = "<%= movieInfo[0].year %>" > <br>
+
+    <span class="user-form-label"> Movie Description: </span>
+    <textarea name = "desc" class="width162" value = "<%= movieInfo[0].description %>"> <%= movieInfo[0].description %> </textarea> <br>
+
+    <span class="user-form-label"> Movie Rating: </span>
+    <input type = "text" name = "rating" class="width162" value = "<%= movieInfo[0].rated %>" > <br>
+
+    <span class="user-form-label"> Movie Poster: </span>
+    <input type = "text" name = "poster" class="width162" value = "<%= movieInfo[0].poster %>" > <br>
+
+    <button class="width130 ml16"> Update Movie </button>
+
+  </form>
+<%- include("partials/footer.ejs") %>
+</body>
+</html>

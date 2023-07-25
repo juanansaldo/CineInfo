@@ -1,0 +1,53 @@
+<%- include("partials/headeruser.ejs") %>
+
+<body>
+
+  <header> 
+    <h1 class="com-title"> Movie Results  </h1>
+    <nav class="mod">
+      <a class="com-nav" href="/userPage"> Home </a>
+      <a class="com-nav" href="/useractors"> All Actors </a>
+      <a class="com-nav" href="/usermovies"> All Movies </a>
+      <a class="com-nav" href="/searchuser"> Search </a>
+      <a class="com-nav" href="/logout"> Logout </a>
+    </nav>
+  </header>
+
+  <form method = "GET"  action = "/searchByTitl" class="mod" style="padding-top:24px">
+      <span class="user-form-label"> Title: </span>
+      <input  type ="text" name = "title" class="width162">
+
+      <button class="width130 ml16"> Search by Title </button>
+    
+  </form>
+
+
+  <form method = "GET"  action = "/searchByActo" class="mod mt10">
+    
+      <span class="user-form-label">Actor:</span>
+        <select name = "actorId" class="width162" style="height:26px">
+
+        <% for(i = 0; i < names.length; i++) { %>
+          <option value="<%= names[i].actorId %>" > <%= names[i].name %> </option>
+        <% } %>
+          
+        </select> 
+
+        <button class="width130 ml16"> Search by Actor </button>
+    </form>
+
+    <form method = "GET"  action = "/searchByRatin" class="mod mt10">
+    
+      <span class="user-form-label">Rating:</span>
+        <% for(i = 0; i < rate.length; i++) { %>
+          <input type ="radio" name = "rating" value= "<%= rate[i].rated %>" > <%= rate[i].rated %> </input> 
+        <% } %>
+
+        <button class="width130 ml16"> Search by Rating </button>
+    </form>
+
+  <div class="foot-fixed ">
+    <%- include("partials/footer.ejs") %>
+  </div>
+</body>
+</html>

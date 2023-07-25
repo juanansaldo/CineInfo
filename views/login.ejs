@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+  
+<body>
+  <h1 class="com-title"> Login Screen </h1>
+
+  <form method="POST" action = "/login" class="mod"> 
+    <span class="login-form-label">Username: </span>
+    <input type="text" name="username">
+    <div class="form-br"></div>
+    <span class="login-form-label">Password: </span>
+    <input type="password" name="password">
+    <br><br>
+    <button class="com-btn"> Login! </button>
+    <a href="/create" class="com-btn">Create an account</a>
+  </form>
+  <div class="com-tip">
+    <% if (typeof(error) != "undefined") { %>
+      <%= error %>
+    <% } %>
+  </div>
+  <div class="foot-fixed ">
+    <%- include("partials/footer.ejs") %>
+  </div>
+</body>
+      
+</html>

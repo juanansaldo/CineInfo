@@ -1,0 +1,64 @@
+<%- include("partials/header.ejs") %>
+
+  <header>
+    <h1 class="com-title"> Movies </h1>
+    <nav class="mod">
+      <a class="com-nav" href="/home"> Home </a>
+      <a class="com-nav" href="/addMovie"> Add a movie </a>
+      <a class="com-nav" href="/addActor"> Add an actor </a>
+      <a class="com-nav" href="/movies"> All Movies </a>
+      <a class="com-nav" href="/actors"> All Actors </a>
+      <a class="com-nav" href="/search"> Search </a>
+      <a class="com-nav" href="/logout"> Logout </a>
+    </nav>
+    <br>
+  </header>
+  
+  <div id="movies">
+    <% for (i = 0; i < movies.length; i++) { %>
+      <div class="com-item"> 
+        <a href="/updateMovie?id=<%= movies[i].movieId %>"> Update </a>
+        <a href="/deleteMovie?id=<%= movies[i].movieId %>"> Delete </a>        
+        <br>
+        <img src= "<%= movies[i].poster %> " width = "160px"> <br>    
+        <a class="com-text card-text" href="#" id="<%= movies[i].movieId %>"> <%= movies[i].title %> </a> 
+        <br>
+        
+        <div class="com-text card-text" > 
+          <%= movies[i].rated %>
+        </div> 
+         
+      </div>
+  <% } %>
+</div>
+
+  <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"> Movie Info </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+  
+          <div class="mod" id = "movieName"> </div>
+          <div class="mod" id = "movieRating"> </div>
+          <div class="mod" id="movieYear"> </div>
+          <div class="mod" id="movieGenre"> </div>
+          <div class="mod" id = "moviePicture"> </div>
+          <div id = "movieDesc"> </div>
+          
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>      
+      <script src="/js/script2.js"></script>
+    
+<%- include("partials/footer.ejs") %>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<%- include("partials/header.ejs") %>
+  
+<body>
+  <header>
+    <h1 class="com-title"> Movie Results </h1>
+    
+    <nav class="mod">
+      <a class="com-nav" href="/home"> Home </a>
+      <a class="com-nav" href="/addMovie"> Add a movie </a>
+      <a class="com-nav" href="/addActor"> Add an actor </a>
+      <a class="com-nav" href="/movies"> All Movies </a>
+      <a class="com-nav" href="/actors"> All Actors </a>
+      <a class="com-nav" href="/search"> Search </a>
+      <a class="com-nav" href="/logout"> Logout </a>
+    </nav>
+    <br>
+  </header>
+
+  <div id="movies">
+    <% for(i = 0; i < movies.length; i++) { %>
+      <div class="com-item">
+        <br>
+<!--         <a href="#" id="<%= movies[i].movieId %>"> <img src="<%= movies[i].poster %>" width="160px"> </a>
+        <br>
+
+        <a href="#" id="<%= movies[i].actorId %>"> -<i> 
+          <%= movies[i].name %> 
+        </i> </a> -->
+
+        <img src= "<%= movies[i].poster %> " height="240px" width = "160px"> <br>    
+        <a class="com-text card-text" href="#" id="<%= movies[i].movieId %>"> <%= movies[i].title %> </a> 
+        <br>
+        <div class="com-text card-text" > 
+          <%= movies[i].rated %>
+        </div> 
+        <br>
+      </div>
+    <% } %>
+  </div>
+
+<!-- Actor Modal -->
+<!-- <div class="modal fade" id="actorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"> Actor Info </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+          <div class="mod" id = "actorName"> </div>
+          <div class="mod" id = "actorAge"> </div>
+          <div class="mod" id = "actorPicture"> </div>
+          <div id="actorAbout"> </div>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Movie Modal -->
+   <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"> Movie Info </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="mod" id = "movieName"> </div>
+        <div class="mod" id = "movieRating"> </div>
+        <div class="mod" id="movieYear"> </div>
+        <div class="mod" id="movieGenre"> </div>
+        <div class="mod" id = "moviePicture"> </div>
+        <div id = "movieDesc"> </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>      
+
+<!-- <script src="/js/script.js"></script> -->
+<script src="/js/script2.js"></script>
+
+<%- include("partials/footer.ejs") %>      
+    
+</body>
+</html>

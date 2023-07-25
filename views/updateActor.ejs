@@ -1,0 +1,41 @@
+<%- include("partials/header.ejs") %>
+
+  <header>
+    <h1 class="com-title"> Update Actor Info </h1>
+    
+    <nav class="mod">
+      <a class="com-btn" href="/home"> Home </a>
+      <a class="com-btn" href="/addMovie"> Add a movie </a>
+      <a class="com-btn" href="/addActor"> Add an actor </a>
+      <a class="com-btn" href="/movies"> All Movies </a>
+      <a class="com-btn" href="/actors"> All Actors </a>
+      <a class="com-btn" href="/search"> Search </a>
+      <a class="com-btn" href="/logout"> Logout </a>
+    </nav>
+    <br>
+  </header>
+
+  <form action = "/updateActor" method = "POST" class="mod">
+
+    <input type="hidden" name="actorId" value="<%= actorInfo[0].actorId %>">
+    
+    <span class="user-form-label"> Name: </span> 
+    <input type = "text" name = "actorName" class="width162" value = "<%= actorInfo[0].name %>">  <br>
+
+    <span class="user-form-label"> Age: </span>
+    <input type = "text" name = "Age" class="width162" value = "<%= actorInfo[0].age %>"> <br>
+
+    <span class="user-form-label"> Picture: </span>
+    <input type = "text" name = "picture" class="width162" value = "<%= actorInfo[0].portrait %>">    <br>
+
+
+    <span class="user-form-label"> About: </span>
+    <textarea name = "about" class="width162" value = "<%= actorInfo[0].about %>"> <%= actorInfo[0].about %> </textarea>
+    <br>
+
+    <button class="width130 ml16"> Update Actor </button>
+
+  </form>
+<%- include("partials/footer.ejs") %>
+</body>
+</html>

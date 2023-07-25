@@ -1,0 +1,72 @@
+<%- include("partials/header.ejs") %>
+  
+<body>
+  <header>
+    <h1 class="com-title"> Add a Movie </h1>
+    <nav class="mod">
+      <a class="com-nav" href="/home"> Home </a>
+      <a class="com-nav" href="/addMovie"> Add a movie </a>
+      <a class="com-nav" href="/addActor"> Add an actor </a>
+      <a class="com-nav" href="/movies"> All Movies </a>
+      <a class="com-nav" href="/actors"> All Actors </a>
+      <a class="com-nav" href="/search"> Search </a>
+      <a class="com-nav" href="/logout"> Logout </a>
+    </nav>
+    <br>
+  </header>
+
+  <form action="/addMovie" method="POST" class="mod">
+    <span class="user-form-label"> Title: </span>
+    <input type=text name="title" class="width162"> <br>
+
+    <span class="user-form-label"> Genre: </span>
+    <input type=text name="genre" class="width162"> <br>
+
+    <span class="user-form-label"> Year: </span>
+    <input type="text" name="year" class="width162"> <br>
+    
+    <span class="user-form-label"> Description: </span>
+    <textarea name="description" class="width162"></textarea> <br>
+
+    <span class="user-form-label"> Rated: </span>
+    <label>
+      <input type ="radio" name = "rated" value="G"> G </input> 
+    </label>
+    
+    <label>
+      <input type ="radio" name = "rated" value="PG"> PG </input>
+    </label>
+
+    <label>
+      <input type ="radio" name = "rated" value="PG-13"> PG-13 </input>
+    </label>
+
+    <label>
+      <input type ="radio" name = "rated" value="R"> R </input>
+    </label>
+
+     <label>
+      <input type ="radio" name = "rated" value="Unrated"> Unrated </input>
+    </label>
+    <br>
+
+    <span class="user-form-label"> Actor: </span>
+    <select name="actor">
+      <% for (i = 0; i < actor.length; i++) { %>
+        <option value="<%= actor[i].actorId %>"> <%= actor[i].name %> </option>
+      <% } %>
+    </select> 
+    
+    <a href="/addActor" >Add Actor</a>
+    <br>
+
+    <span class="user-form-label"> Poster: </span>
+    <input type= "text" name="poster" class="width162"> <br>
+
+    <br>
+    
+    <button> Add Movie </button>
+  </form>
+  <%- include("partials/footer.ejs") %>
+</body>
+</html>

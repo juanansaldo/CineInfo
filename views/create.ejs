@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+  
+<body>
+  <h1 class="com-title"> Create account </h1>
+
+  <form method="POST" action = "/addUser" class="mod"> 
+    <span class="login-form-label">Username: </span>
+    <input type="text" name="username" placeholder="Enter user name">
+    <div class="form-br"></div>
+    <span class="login-form-label">Password: </span>
+    <input type="password" name="password" placeholder="Enter a password">
+    <br><br>
+    
+   
+     <button class="com-btn">Create account</button>
+  </form>
+
+  <div class="foot-fixed ">
+    <%- include("partials/footer.ejs") %>
+  </div>
+ 
+</body>
+      
+</html>
